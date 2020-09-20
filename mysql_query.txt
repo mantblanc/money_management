@@ -1,0 +1,17 @@
+CREATE TABLE user(
+    num INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL unique,
+    pwd VARCHAR(20),
+    PRIMARY KEY(num)
+);
+
+CREATE TABLE money_transaction(
+    num      INT NOT NULL AUTO_INCREMENT,
+    user_num INT NOT NULL,
+    entry_name VARCHAR(50),  
+    price   INT,
+    date    DATE,
+    descripion TEXT,
+    PRIMARY KEY(num),
+    FOREIGN KEY(user_num) REFERENCES user(num)
+);
