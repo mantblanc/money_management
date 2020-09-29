@@ -1,0 +1,19 @@
+<html>
+    <head>
+        Money Transaction List
+    </head>
+
+    <body>
+        <div class="col-md-12">
+            <div class="container">
+                {% for list in money_transaction %}
+                    <div class="list-group-item"><input type="checkbox" name={{list.entry_name}} value={{list.entry_name}}>{{list.entry_name}} : {{list.price}}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+    <button type="button" class="btn btn-primary" onclick="location.href='{% url 'money_list:money_list_insert' %} '">
+        목록 추가
+    </button>
+    </body>
+</html>
